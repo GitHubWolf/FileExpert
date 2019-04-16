@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE7CE0A8-4D0D-4A29-9AA5-C5BB95014044}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileExpert</RootNamespace>
+    <AssemblyName>FileExpert</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>FileExpert.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASN\FormASN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ASN\FormASN.designer.cs" />
+    <Compile Include="ASN\ParserASN.cs" />
+    <Compile Include="DER\FormDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DER\FormDER.designer.cs">
+      <DependentUpon>FormDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DER\ParserDER.cs" />
+    <Compile Include="FormSelectParser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectParser.Designer.cs">
+      <DependentUpon>FormSelectParser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MP4\Box\Box.cs" />
+    <Compile Include="MP4\Box\CompositionOffsetBox.cs" />
+    <Compile Include="MP4\Box\ChunkOffsetBox.cs" />
+    <Compile Include="MP4\Box\AudioSampleEntry.cs" />
+    <Compile Include="MP4\Box\FreeSpaceBox.cs" />
+    <Compile Include="MP4\Box\MetaBox.cs" />
+    <Compile Include="MP4\Box\EditListBox.cs" />
+    <Compile Include="MP4\Box\EditBox.cs" />
+    <Compile Include="MP4\Box\UserDataBox.cs" />
+    <Compile Include="MP4\Box\SyncSampleBox.cs" />
+    <Compile Include="MP4\Box\SampleDependencyTypeBox.cs" />
+    <Compile Include="MP4\Box\VideoMediaHeaderBox.cs" />
+    <Compile Include="MP4\Box\MovieFragmentRandomAccessOffsetBox.cs" />
+    <Compile Include="MP4\Box\TrackFragmentRandomAccessBox.cs" />
+    <Compile Include="MP4\Box\TrackRunBox.cs" />
+    <Compile Include="MP4\Box\TrackFragmentHeaderBox.cs" />
+    <Compile Include="MP4\Box\TrackFragmentBox.cs" />
+    <Compile Include="MP4\Box\MovieFragmentHeaderBox.cs" />
+    <Compile Include="MP4\Box\TrackExtendsBox.cs" />
+    <Compile Include="MP4\Box\MovieExtendsHeaderBox.cs" />
+    <Compile Include="MP4\Box\MovieExtendsBox.cs" />
+    <Compile Include="MP4\Box\SampleDescriptionBox.cs" />
+    <Compile Include="MP4\Box\SampleEntry.cs" />
+    <Compile Include="MP4\Box\SampleSizeBox.cs" />
+    <Compile Include="MP4\Box\SampleToChunkBox.cs" />
+    <Compile Include="MP4\Box\TimeToSampleBox.cs" />
+    <Compile Include="MP4\Box\SampleTableBox.cs" />
+    <Compile Include="MP4\Box\DataEntryUrnBox.cs" />
+    <Compile Include="MP4\Box\DataEntryUrlBox.cs" />
+    <Compile Include="MP4\Box\DataReferenceBox.cs" />
+    <Compile Include="MP4\Box\DataInformationBox.cs" />
+    <Compile Include="MP4\Box\SoundMediaHeaderBox.cs" />
+    <Compile Include="MP4\Box\MediaInformationBox.cs" />
+    <Compile Include="MP4\Box\HandlerBox.cs" />
+    <Compile Include="MP4\Box\MediaHeaderBox.cs" />
+    <Compile Include="MP4\Box\MediaBox.cs" />
+    <Compile Include="MP4\Box\TrackHeaderBox.cs" />
+    <Compile Include="MP4\Box\TrackBox.cs" />
+    <Compile Include="MP4\Box\MovieHeaderBox.cs" />
+    <Compile Include="MP4\Box\MovieFragmentRandomAccessBox.cs" />
+    <Compile Include="MP4\Box\MediaDataBox.cs" />
+    <Compile Include="MP4\Box\MovieFragmentBox.cs" />
+    <Compile Include="MP4\Box\MovieBox.cs" />
+    <Compile Include="MP4\Box\FileTypeBox.cs" />
+    <Compile Include="MP4\Box\FullBox.cs" />
+    <Compile Include="MP4\Info\MeidaBoxInfo.cs" />
+    <Compile Include="MP4\ParserMp4.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MP4\FormMp4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MP4\FormMp4.Designer.cs">
+      <DependentUpon>FormMp4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParser.Designer.cs">
+      <DependentUpon>FormParser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRH\FormPRH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRH\FormPRH.Designer.cs" />
+    <Compile Include="PRH\ParserPRH.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRE\FormPRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRE\FormPRE.Designer.cs">
+      <DependentUpon>FormPRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\ParserPRE.cs" />
+    <Compile Include="XMR\FormXMR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XMR\FormXMR.Designer.cs">
+      <DependentUpon>FormXMR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XMR\ParserXMR.cs" />
+    <EmbeddedResource Include="ASN\FormASN.resx" />
+    <EmbeddedResource Include="DER\FormDER.resx">
+      <DependentUpon>FormDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectParser.resx">
+      <DependentUpon>FormSelectParser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MP4\FormMp4.resx">
+      <DependentUpon>FormMp4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParser.resx">
+      <DependentUpon>FormParser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRH\FormPRH.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PRE\FormPRE.resx">
+      <DependentUpon>FormPRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XMR\FormXMR.resx">
+      <DependentUpon>FormXMR.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FileExpert.ico" />
+    <Content Include="OID.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="res\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{295F72B6-382E-4381-AB57-DF6A44BFE883}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
