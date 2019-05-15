@@ -14,6 +14,7 @@ using FileExpert.PRE;
 using FileExpert.PRH;
 using FileExpert.ASN;
 using FileExpert.DER;
+using FileExpert.JavaClass;
 
 namespace FileExpert
 {
@@ -82,8 +83,9 @@ namespace FileExpert
         {
             FormSelectParser formSelectParser = new FormSelectParser();
             formSelectParser.ShowDialog();
+            //formSelectParser.SelectedIndex = 6;
 
-            if(formSelectParser.DialogResult == DialogResult.OK)
+            if (formSelectParser.DialogResult == DialogResult.OK)
             {
                 switch (formSelectParser.SelectedIndex)
                 {
@@ -157,6 +159,19 @@ namespace FileExpert
                     case 5:
                         {
                             FormDER newForm = new FormDER();
+                            newForm.MdiParent = this;
+                            newForm.WindowState = FormWindowState.Maximized;
+                            //Set the stream file to the parser.
+                            newForm.SetStreamFile(fileName);
+                            newForm.Show();
+
+                            //Save into the MRU.
+                            ManagerMRU.AddMruItem(fileName);
+                            break;
+                        }
+                    case 6:
+                        {
+                            FormJavaClass newForm = new FormJavaClass();
                             newForm.MdiParent = this;
                             newForm.WindowState = FormWindowState.Maximized;
                             //Set the stream file to the parser.

@@ -74,12 +74,17 @@
       <DependentUpon>FormDER.cs</DependentUpon>
     </Compile>
     <Compile Include="DER\ParserDER.cs" />
+    <Compile Include="JavaClass\FormJavaClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JavaClass\FormJavaClass.designer.cs" />
     <Compile Include="FormSelectParser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSelectParser.Designer.cs">
       <DependentUpon>FormSelectParser.cs</DependentUpon>
     </Compile>
+    <Compile Include="JavaClass\ParserJavaClass.cs" />
     <Compile Include="MP4\Box\Box.cs" />
     <Compile Include="MP4\Box\CompositionOffsetBox.cs" />
     <Compile Include="MP4\Box\ChunkOffsetBox.cs" />
@@ -170,6 +175,7 @@
     <EmbeddedResource Include="DER\FormDER.resx">
       <DependentUpon>FormDER.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JavaClass\FormJavaClass.resx" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

@@ -36,23 +36,25 @@
             // listBoxParsers
             // 
             this.listBoxParsers.FormattingEnabled = true;
+            this.listBoxParsers.ItemHeight = 12;
             this.listBoxParsers.Items.AddRange(new object[] {
             "MP4 Box file(*.mp4;*.ismv;*.ismc;*.ism;*.isma)",
             "XMR file(*.xmr)",
             "PlayReady Envelope file(*.eny;*.prdy)",
             "Playready Header Object file(*.prh)",
             "ASN.1 file(*.asn)",
-            "X509 file(*.der;*.cer)"});
+            "X509 file(*.der;*.cer)",
+            "Java Class File(*.class)"});
             this.listBoxParsers.Location = new System.Drawing.Point(2, 1);
             this.listBoxParsers.Name = "listBoxParsers";
-            this.listBoxParsers.Size = new System.Drawing.Size(321, 173);
+            this.listBoxParsers.Size = new System.Drawing.Size(321, 160);
             this.listBoxParsers.TabIndex = 0;
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(12, 209);
+            this.buttonOK.Location = new System.Drawing.Point(12, 193);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.Size = new System.Drawing.Size(75, 21);
             this.buttonOK.TabIndex = 1;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -60,9 +62,9 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(220, 209);
+            this.buttonCancel.Location = new System.Drawing.Point(220, 193);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(75, 21);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -70,9 +72,9 @@
             // 
             // FormSelectParser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 237);
+            this.ClientSize = new System.Drawing.Size(323, 219);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.listBoxParsers);
