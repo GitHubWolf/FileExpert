@@ -7,3 +7,6 @@ It was initially created for the my personal purpose, but I think it could also 
 
 
 Refer to https://github.com/GitHubWolf/FileExpert/wiki for more details.
+
+2019-05-15 update:
+Add support to parse Java .class file.
